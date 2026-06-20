@@ -3,47 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <style>
-    body { font-family: sans-serif; width: 380px; padding: 15px; margin: 0; color: #333; }
+    body { font-family: sans-serif; width: 480px; padding: 15px; margin: 0; color: #333; }
     h2 { font-size: 16px; margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 10px; }
     
-    .checklist-container { max-height: 250px; overflow-y: auto; margin-bottom: 10px; padding-right: 5px; }
-    .check-item { margin-bottom: 12px; display: flex; align-items: flex-start; }
-    .check-item input { margin-top: 3px; margin-right: 8px; cursor: pointer; }
-    .check-item label { font-size: 13px; line-height: 1.4; cursor: pointer; }
+    .checklist-container { max-height: 400px; overflow-y: auto; margin-bottom: 10px; padding-right: 5px; }
     
-    /* Nova área de insights */
-    .insights-box { background: #f8f9fa; border: 1px solid #ddd; border-radius: 4px; padding: 10px; font-size: 12px; margin-bottom: 10px; white-space: pre-wrap; color: #555;}
-    .insights-box strong { color: #0056b3; display: block; margin-bottom: 5px;}
+    .check-item { background: #fdfdfd; border: 1px solid #eee; border-radius: 4px; padding: 10px; margin-bottom: 12px; }
+    .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; }
+    .item-header label { font-size: 13px; font-weight: bold; width: 70%; line-height: 1.3; }
+    .item-header select { font-size: 12px; padding: 3px; border: 1px solid #ccc; border-radius: 3px; margin-left: 10px; }
+    
+    .item-dica { font-size: 11px; color: #666; font-style: italic; margin-bottom: 8px; line-height: 1.4; display: block; }
+    
+    .check-item input[type="text"] { width: 100%; box-sizing: border-box; padding: 6px; font-size: 12px; border: 1px solid #ddd; border-radius: 3px; }
+    
+    .insights-box { background: #f0f7ff; border: 1px solid #cce5ff; border-radius: 4px; padding: 10px; font-size: 12px; margin-bottom: 12px; white-space: pre-wrap; color: #004085; line-height: 1.4;}
+    .insights-box strong { display: block; margin-bottom: 5px;}
 
-    textarea { width: 100%; box-sizing: border-box; font-family: inherit; margin-bottom: 10px; padding: 8px; }
-    button { width: 100%; padding: 12px; background: #0056b3; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+    button { width: 100%; padding: 12px; background: #0056b3; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px; }
     button:hover { background: #004494; }
   </style>
 </head>
 <body>
-  <h2>Avaliação Heurística Híbrida</h2>
+  <h2>Auditoria Heurística Detalhada</h2>
   
-  <div class="checklist-container">
-    <div class="check-item"><input type="checkbox" id="h1"><label for="h1">1. Visibilidade do status do sistema</label></div>
-    <div class="check-item"><input type="checkbox" id="h2"><label for="h2">2. Compatibilidade entre o sistema e o mundo real</label></div>
-    <div class="check-item"><input type="checkbox" id="h3"><label for="h3">3. Controle e liberdade do usuário</label></div>
-    <div class="check-item"><input type="checkbox" id="h4"><label for="h4">4. Consistência e padrões</label></div>
-    <div class="check-item"><input type="checkbox" id="h5"><label for="h5">5. Prevenção de erros</label></div>
-    <div class="check-item"><input type="checkbox" id="h6"><label for="h6">6. Reconhecimento em vez de memorização</label></div>
-    <div class="check-item"><input type="checkbox" id="h7"><label for="h7">7. Flexibilidade e eficiência de uso</label></div>
-    <div class="check-item"><input type="checkbox" id="h8"><label for="h8">8. Estética e design minimalista</label></div>
-    <div class="check-item"><input type="checkbox" id="h9"><label for="h9">9. Ajudar usuários a reconhecer, diagnosticar e recuperar-se de erros</label></div>
-    <div class="check-item"><input type="checkbox" id="h10"><label for="h10">10. Ajuda e documentação</label></div>
-  </div>
-
   <div class="insights-box">
-    <strong>🤖 Inspeção Automática:</strong>
-    <span id="auto-feedback">Analisando a página...</span>
+    <strong>🤖 Dados Automáticos da Página:</strong>
+    <span id="auto-feedback">Analisando a aba atual...</span>
   </div>
 
-  <textarea id="notes" placeholder="Suas observações manuais..." rows="3"></textarea>
+  <div class="checklist-container">
+    <div id="dynamic-heuristics"></div>
+  </div>
 
-  <button id="gerar-txt">Baixar Relatório .txt</button>
+  <button id="gerar-txt">Gerar Relatório Detalhado (.txt)</button>
 
   <script src="popup.js"></script>
 </body>
